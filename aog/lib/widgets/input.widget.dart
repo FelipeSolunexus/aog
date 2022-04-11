@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Input extends StatelessWidget {
-  late var label;
-  late var ctrl = new TextEditingController();
+  var label = "";
+  var ctrl = TextEditingController();
 
-  Input({required this.label, required this.ctrl});
+  Input({Key? key, required this.label, required this.ctrl}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,7 +14,7 @@ class Input extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white,
                 fontSize: 35,
                 fontFamily: "Big Shoulders Display"),
