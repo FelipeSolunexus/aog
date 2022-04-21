@@ -1,6 +1,7 @@
 import 'package:aog/widgets/calcular_widget.dart';
 import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/logo_widget.dart';
+import 'package:aog/widgets/submit_form.dart';
 import 'package:aog/widgets/success_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -39,14 +40,11 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           const Logo(),
           Success(result: "abaste com X", reset: () {}),
-          Input(label: "Gasolina", ctrl: _gasCtrl),
-          Input(label: "Etanol", ctrl: _alcoolCtrl),
-          LoadingButton(
-            titleButton: "Calcular",
-            busy: false,
-            invert: true,
-            func: () {},
-          ),
+          Submit(
+              etanolControler: _alcoolCtrl,
+              gasolinaControler: _gasCtrl,
+              busy: false,
+              submitFunc: () {}),
         ],
       ),
     );
