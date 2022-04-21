@@ -1,3 +1,4 @@
+import 'package:aog/widgets/calcular_widget.dart';
 import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/logo_widget.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Qual compensa mais?',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
     );
@@ -35,27 +36,55 @@ class HomePage extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       body: ListView(
         children: <Widget>[
-          Logo(),
-          Input(label: "Gasolina", ctrl: _gasCtrl),
-          Input(label: "Etanol", ctrl: _alcoolCtrl),
+          const Logo(),
           Container(
             margin: const EdgeInsets.all(30),
-            height: 60,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(
-                60,
-              ),
+              color: Colors.blue.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(25),
             ),
-            child: TextButton(
-              child: const Text("calcular",
+            child: Column(
+              children: <Widget>[
+                const SizedBox(
+                  height: 15,
+                ),
+                const Text(
+                  "Vale mais a pena abastecer no Etanol",
                   style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontFamily: "Big Shoulders Display",
-                      fontSize: 35)),
-              onPressed: () {},
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontFamily: "Big Shoulders Display",
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                BtnCalcular(titleButton: "Calcular Novamente"),
+              ],
             ),
-          )
+          ),
+          Input(label: "Gasolina", ctrl: _gasCtrl),
+          Input(label: "Etanol", ctrl: _alcoolCtrl),
+          BtnCalcular(titleButton: "Calcular"),
+          // Container(
+          //   margin: const EdgeInsets.all(30),
+          //   height: 60,
+          //   decoration: BoxDecoration(
+          //     color: Colors.white.withOpacity(0.8),
+          //     borderRadius: BorderRadius.circular(
+          //       60,
+          //     ),
+          //   ),
+          //   child: TextButton(
+          //     child: const Text("calcular",
+          //         style: TextStyle(
+          //             color: Colors.blue,
+          //             fontFamily: "Big Shoulders Display",
+          //             fontSize: 35)),
+          //     onPressed: () {},
+          //   ),
+          // )
         ],
       ),
     );
