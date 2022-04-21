@@ -60,31 +60,23 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                BtnCalcular(titleButton: "Calcular Novamente"),
+                LoadingButton(
+                  titleButton: "Calcular Novamente",
+                  busy: false,
+                  invert: false,
+                  func: () {},
+                ),
               ],
             ),
           ),
           Input(label: "Gasolina", ctrl: _gasCtrl),
           Input(label: "Etanol", ctrl: _alcoolCtrl),
-          BtnCalcular(titleButton: "Calcular"),
-          // Container(
-          //   margin: const EdgeInsets.all(30),
-          //   height: 60,
-          //   decoration: BoxDecoration(
-          //     color: Colors.white.withOpacity(0.8),
-          //     borderRadius: BorderRadius.circular(
-          //       60,
-          //     ),
-          //   ),
-          //   child: TextButton(
-          //     child: const Text("calcular",
-          //         style: TextStyle(
-          //             color: Colors.blue,
-          //             fontFamily: "Big Shoulders Display",
-          //             fontSize: 35)),
-          //     onPressed: () {},
-          //   ),
-          // )
+          LoadingButton(
+            titleButton: "Calcular",
+            busy: false,
+            invert: true,
+            func: () {},
+          ),
         ],
       ),
     );
