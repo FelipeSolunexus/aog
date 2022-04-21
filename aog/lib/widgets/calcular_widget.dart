@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class LoadingButton extends StatelessWidget {
-  var titleButton = "";
+  // ignore: prefer_typing_uninitialized_variables
+  late var titleButton;
   var busy = false;
   var invert = false;
-  Function func;
+  late Function func;
 
   LoadingButton(
       {Key? key,
